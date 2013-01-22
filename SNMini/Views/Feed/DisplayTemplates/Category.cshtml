@@ -1,0 +1,7 @@
+﻿@model SNMini.Models.Category
+<itunes:category text="@Html.DisplayFor(m => m.Text)">
+@if ( Model.SubCategory != null)
+{
+    @Html.DisplayFor(m => m.SubCategory)
+}
+</itunes:category>

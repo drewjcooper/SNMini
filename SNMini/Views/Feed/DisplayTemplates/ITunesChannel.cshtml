@@ -1,0 +1,13 @@
+﻿@model SNMini.Models.ITunes
+  <itunes:author>@Model.Author</itunes:author>
+  <itunes:subtitle>@Model.Subtitle</itunes:subtitle>
+  <itunes:summary>@Html.Raw(Model.Summary)</itunes:summary>
+  <itunes:keywords>@Model.Keywords</itunes:keywords>
+  <itunes:image href="@Model.Image"/>
+  <itunes:explicit>@Model.Explicit</itunes:explicit>
+  <itunes:owner>
+    <itunes:name>@Model.Owner.Name</itunes:name>
+    <itunes:email>@Model.Owner.Email</itunes:email>
+  </itunes:owner>
+  <itunes:block>@Model.Block</itunes:block>
+  @Html.DisplayFor(m => m.Category)

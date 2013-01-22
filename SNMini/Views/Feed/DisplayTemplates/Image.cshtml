@@ -1,0 +1,13 @@
+﻿@model SNMini.Models.Image
+<image>
+<url>@Html.DisplayFor(m => m.Url)</url>
+<title>@Html.DisplayFor(m => m.Title)</title>
+<link>@Html.DisplayFor(m => m.Link)</link>
+<width>@Html.DisplayFor(m => m.Width)</width>
+<height>@Html.DisplayFor(m => m.Height)</height>
+<description>
+<![CDATA[
+@Html.DisplayFor(m => m.Description)
+]]>
+</description>
+</image>

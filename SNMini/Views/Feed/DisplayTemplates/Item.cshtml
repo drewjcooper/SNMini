@@ -1,0 +1,17 @@
+﻿@model SNMini.Models.Item
+<item>
+<title>@Model.Title</title>
+<description><![CDATA[@Html.Raw(Model.Description)]]></description>
+<author>@Model.Author</author>
+<pubDate>@Html.DisplayFor(m => m.PubDate)</pubDate>
+@foreach (var category in Model.Categories)
+{
+<category>@category</category>
+}
+<comments>@Model.Comments</comments>
+@Html.DisplayFor(m => m.ITunes, "ITunesItem")
+<link>@Model.Url</link>
+<enclosure url="@Model.Url" length="@Model.Filesize" type="audio/mpeg"/>
+<media:content url="@Model.Url" medium="audio" type="audio/mpeg" filesize="@Model.Filesize"/>
+</item>
+

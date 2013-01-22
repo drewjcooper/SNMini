@@ -1,0 +1,5 @@
+﻿@model SNMini.Models.ITunes
+<itunes:author>@Html.DisplayFor(m => m.Author)</itunes:author>
+<itunes:summary><![CDATA[@Html.Raw(Model.Summary)]]></itunes:summary>
+<itunes:explicit>@Html.DisplayFor(m => m.Explicit)</itunes:explicit>
+<itunes:duration>@Html.DisplayFor(m => m.Duration)</itunes:duration>

@@ -1,0 +1,24 @@
+﻿@model SNMini.Models.Channel
+<channel>
+<title>@Model.Title</title>
+<link>@Model.Link</link>
+<description><![CDATA[@Html.Raw(Model.Description)]]></description>
+<generator>SNMini by DrewJSoftware</generator>
+<docs>http://blogs.law.harvard.edu/tech/rss</docs>
+<language>en-us</language>
+<copyright>@Model.Copyright</copyright>
+<managingEditor>@Model.ManagingEditor</managingEditor>
+<webMaster>@Model.WebMaster</webMaster>
+<pubDate>@Html.DisplayFor(m => m.PubDate)</pubDate>
+<lastBuildDate>@Html.DisplayFor(m => m.LastBuildDate)</lastBuildDate>
+<ttl>@Model.Ttl</ttl>
+@Html.DisplayFor(m => m.Image)
+<atom:link href="@Model.AtomLink" type="application/rss+xml" rel="self"/>
+@Html.DisplayFor(m => m.ITunes, "ITunesChannel")
+
+@foreach(var item in Model.Items)
+{
+    @Html.DisplayFor(m => item);
+}
+</channel>
+
