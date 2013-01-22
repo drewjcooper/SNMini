@@ -71,7 +71,7 @@ namespace SNMini.Controllers
                     Name = "Leo Laporte",
                     Email = "leo@leoville.com"
                 },
-                Block = "no",;
+                Block = "no",
                 Category = new Category
                 {
                     Text = "Technology",
