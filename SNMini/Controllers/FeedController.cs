@@ -1,4 +1,5 @@
 ﻿using HtmlAgilityPack;
+using SNMini.Core;
 using SNMini.Models;
 using System;
 using System.Collections.Generic;
@@ -48,7 +49,7 @@ namespace SNMini.Controllers
                 PubDate = DateTime.Now,
                 LastBuildDate = DateTime.Now,
                 Ttl = 720,
-                AtomLink = HttpContext.Request.Url.AbsoluteUri,
+                AtomLink = new AppUrl(HttpContext.Request.Url).ToString(),
                 Image = GenerateImage(),
                 ITunes = GenerateITunes(),
                 Items = GenerateItems().Take(quantity)
@@ -64,7 +65,7 @@ namespace SNMini.Controllers
                 Subtitle = "A weekly look at security issues with Steve Gibson of ShieldsUP!",
                 Summary = "Steve Gibson, the man who coined the term spyware and created the first anti-spyware program, creator of Spinrite and ShieldsUP, discusses the hot topics in security today with Leo Laporte. Winner of the 2009 and 2007 people's choice award for best Technology/Science podcast.",
                 Keywords = "Security, Technology",
-                Image = String.Format("{0}://{1}:{2}{3}", HttpContext.Request.Url.Scheme, HttpContext.Request.Url.Host, HttpContext.Request.Url.Port, Url.Content("~/Images/sn600audio16.jpg")),
+                Image = new AppUrl( HttpContext.Request.Url, Url.Content("~/Images/sn600audio16.jpg")).ToString(),
                 Explicit = "no",
                 Owner = new Owner
                 {
@@ -88,7 +89,7 @@ namespace SNMini.Controllers
         {
             return new Image
             {
-                Url = String.Format("{0}://{1}:{2}{3}", HttpContext.Request.Url.Scheme, HttpContext.Request.Url.Host, HttpContext.Request.Url.Port, Url.Content("~/Images/sn144audio16.jpg")),
+                Url = new AppUrl(HttpContext.Request.Url, Url.Content("~/Images/sn144audio16.jpg")).ToString(),
                 Title = "Security Now! - 16kbps",
                 Link = "http://grc.com/securitynow.htm",
                 Width = 140,
