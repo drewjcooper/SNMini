@@ -114,7 +114,7 @@ namespace SNMini.Controllers
         {
             var item = new Item();
             var match = itemRegex.Match(html);
-            item.Title = "Episode #" + match.Groups["Episode"].Value + ": " + match.Groups["Title"].Value;
+            item.Title = "Security Now " + match.Groups["Episode"].Value + ": " + match.Groups["Title"].Value;
             item.Description = match.Groups["Description"].Value;
             item.Author = "leo@leoville.com (Leo Laporte)";
             item.PubDate = new DateTime(Int32.Parse(match.Groups["Year"].Value), months[match.Groups["Month"].Value], Int32.Parse(match.Groups["Day"].Value), 0, 0, 0, DateTimeKind.Local);
